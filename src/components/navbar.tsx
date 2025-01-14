@@ -12,9 +12,9 @@ import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import NextLink from "next/link";
 
-import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
-import { ExitFilledIcon, Logo } from "@/components/icons";
+import { siteConfig } from "@/src/config/site";
+import { ThemeSwitch } from "@/src/components/theme-switch";
+import { ExitFilledIcon, Logo } from "@/src/components/icons";
 
 export const Navbar = () => {
   return (

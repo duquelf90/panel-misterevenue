@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { IconSvgProps } from "@/types";
+import { IconSvgProps } from "@/src/types";
 import LogoImage from "@/public/logo.svg";
 import Image from "next/image";
 import Link from "next/link";

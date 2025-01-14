@@ -1,7 +1,7 @@
-import { subtitle } from "@/components/primitives";
-import { MyCard } from "@/components/card";
-import { MyTable } from "@/components/table";
-import MyChart from "@/components/grafica";
+import { subtitle } from "@/src/components/primitives";
+import { MyCard } from "@/src/components/card";
+import { MyTable } from "@/src/components/table";
+import MyChart from "@/src/components/grafica";
 
 export default function Home() {
   return (
