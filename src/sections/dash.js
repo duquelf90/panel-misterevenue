@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import FeatureCard from 'components/card';
 import MyTable from 'components/table';
 import MyChart from 'components/chart';
