@@ -4,17 +4,16 @@
 /node_modules
 /.pnp
 .pnp.js
-/.next
 # testing
 /coverage
 
 # next.js
 /.next/
+/.vscode/
 /out/
 
 # production
 /build
-/.vscode
 
 # misc
 .DS_Store
