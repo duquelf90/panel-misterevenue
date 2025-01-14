@@ -1,0 +1,26 @@
+export const SEOpt = {
+  title: "Crecimiento Financiero",
+  titleTemplate: "Mister Revenue | %s",
+  description: "Gestión de Patrimonios de Inversión",
+  canonical: "https://www.misterevenue.io",
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://www.misterevenue.io",
+    siteName: "MisterRevenue",
+  },
+  twitter: {
+    handle: "@handle",
+    site: "@site",
+    cardType: "summary_large_image",
+  },
+  robotsProps: {
+    nosnippet: true,
+    notranslate: true,
+    noimageindex: true,
+    noarchive: true,
+    maxSnippet: -1,
+    maxImagePreview: "none",
+    maxVideoPreview: -1,
+  },
+};

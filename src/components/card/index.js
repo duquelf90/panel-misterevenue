@@ -1,10 +1,6 @@
-/* eslint-disable prettier/prettier */
-"use client";
+import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/react';
 
-import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/card";
-import React from "react";
-
-const CapitalDisplay = ({ initialCapital }: { initialCapital: number }) => {
+const CapitalDisplay = ({ initialCapital }) => {
   const formattedCapital = new Intl.NumberFormat("es-ES", {
     style: "currency",
     currency: "MXN", // Cambia a 'USD' o cualquier otra moneda según necesites
@@ -13,9 +9,7 @@ const CapitalDisplay = ({ initialCapital }: { initialCapital: number }) => {
   return <p>{formattedCapital}</p>;
 };
 
-export const MyCard = (props: { [key: string]: any }) => {
-  const { title, subtitle, balance, roi } = props;
-
+const FeatureCard = ({ title, subtitle, balance, roi }) => {
   return (
     <Card className="w-full">
       <CardHeader className="flex gap-3">
@@ -33,5 +27,7 @@ export const MyCard = (props: { [key: string]: any }) => {
         </div>
       </CardFooter>
     </Card>
-  );
-};
+  )
+}
+
+export default FeatureCard

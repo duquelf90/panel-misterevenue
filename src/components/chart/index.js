@@ -1,12 +1,12 @@
-/* eslint-disable prettier/prettier */
-"use client";
-import React from "react";
+import React from 'react'
 import { Line } from "react-chartjs-2";
+
 import { Chart, registerables } from "chart.js";
+
 
 Chart.register(...registerables);
 
-const MyChart: React.FC = () => {
+const MyChart = () => {
   const monthNames = Array.from({ length: 12 }, (_, i) => {
     const date = new Date(2024, i);
     return date.toLocaleString('default', { month: 'long' });
@@ -41,7 +41,7 @@ const MyChart: React.FC = () => {
 
   return (
     <>
-      <h2 className="text-xl font-semibold">Rendimiento</h2>
+      <h2 className="text-xl font-semibold py-4">Rendimiento</h2>
       <Line data={item} options={options} />
     </>
   );
