@@ -10,7 +10,7 @@ const Dashboard = () => {
           <span className='my-2 text-lg lg:text-xl text-default-600 block max-w-full'>Hola, Marcos A. Daniel&nbsp;</span>
         </div>
         <div className='flex flex-col sm:flex-row md:justify-between gap-3'>
-          <div className="flex flex-col sm:flex-col gap-5 items-center justify-center md:w-3/6">
+          <div className="flex flex-col sm:flex-col gap-5 items-center justify-center md:w-1/2">
             <FeatureCard
               balance={1200000}
               roi={36}
@@ -24,7 +24,7 @@ const Dashboard = () => {
               title={"Ingreso Mensual"}
             />
           </div>
-          <div className='items-center justify-center w-2/6'><MyChart /></div>
+          <div className='items-center justify-center w-1/2'><MyChart /></div>
           
         </div>
         <MyTable />
