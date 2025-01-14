@@ -24,7 +24,7 @@ const Dashboard = () => {
               title={"Ingreso Mensual"}
             />
           </div>
-          <div className='items-center justify-center w-1/2'><MyChart /></div>
+          <div className='items-center justify-center md:w-1/2'><MyChart /></div>
           
         </div>
         <MyTable />
