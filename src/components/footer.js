@@ -1,12 +1,12 @@
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <section className="relative pt-10 md:pt-20 overflow-hidden">
-      <div className="flex flex-wrap justify-center items-center my-10">
-        <p className="text-gray-600 text-sm text-center font-semibold">
-          © 2018 - {currentYear} MisterRevenue LLC. All Rights Reserved.
-        </p>
-      </div>
+    <section className="fixed bottom-0 left-0 right-0 pb-1">
+      <div className="container mx-auto flex flex-wrap justify-center items-center">
+    <p className="text-gray-400 text-sm text-center font-semibold">
+      © 2018 - {currentYear} MisterRevenue LLC. All Rights Reserved.
+    </p>
+  </div>
     </section>
   )
 }
