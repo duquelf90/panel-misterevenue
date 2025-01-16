@@ -1,5 +1,5 @@
 export const SEOpt = {
-  title: "Crecimiento Financiero",
+  title: "Dashboard",
   titleTemplate: "Mister Revenue | %s",
   description: "Gestión de Patrimonios de Inversión",
   canonical: "https://dash.misterevenue.io",
