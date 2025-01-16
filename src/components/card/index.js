@@ -1,6 +1,6 @@
 import { Card, CardBody, CardFooter, CardHeader } from '@nextui-org/react';
 
-const CapitalDisplay = ({ initialCapital }) => {
+export const CapitalDisplay = ({ initialCapital }) => {
   const formattedCapital = new Intl.NumberFormat("es-ES", {
     style: "currency",
     currency: "MXN", // Cambia a 'USD' o cualquier otra moneda según necesites
@@ -9,7 +9,7 @@ const CapitalDisplay = ({ initialCapital }) => {
   return <p>{formattedCapital}</p>;
 };
 
-const FeatureCard = ({ title, subtitle, balance, roi }) => {
+export const FeatureCard = ({ title, subtitle, balance, roi }) => {
   return (
     <Card className="w-full rounded-[10px] bg-white p-6 shadow-1 dark:bg-gray-dark">
       <CardHeader className="flex gap-3">
@@ -30,4 +30,3 @@ const FeatureCard = ({ title, subtitle, balance, roi }) => {
   )
 }
 
-export default FeatureCard

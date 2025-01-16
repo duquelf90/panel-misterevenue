@@ -1,7 +1,7 @@
-import FeatureCard from 'components/card';
 import MyTable from 'components/table';
 import MyChart from 'components/chart';
 import { Card } from '@nextui-org/react';
+import { FeatureCard } from 'components/card';
 
 const Dashboard = () => {
   return (
@@ -19,7 +19,7 @@ const Dashboard = () => {
               title="Cartera Actual"
             />
             <FeatureCard
-              balance={3000}
+              balance={36000}
               roi={3}
               subtitle="mensual"
               title={"Ingreso Mensual"}

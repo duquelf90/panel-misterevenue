@@ -3,6 +3,7 @@
 import React from 'react'
 import dynamic from "next/dynamic";
 import { generateSaldoData } from 'config/utils';
+import { CapitalDisplay } from 'components/card';
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 
@@ -133,31 +134,29 @@ const MyChart = () => {
 
 
   return (
-    <>
+    <div className='ml-1 mr-1'>
       <h4 className="my-2 ml-4 text-body-2xlg font-semibold text-dark ">
         Rendimiento
       </h4>
-      <div className="ml-1 mr-1">
         <ApexChart type="area" options={options} series={series} height={100} />
-      </div>
 
-      <div className="flex flex-row gap-2 text-center xsm:flex-row xsm:gap-0 justify-center items-center">
+      <div className="flex flex-row gap-1 text-center xsm:flex-row xsm:gap-0 justify-center items-center">
         <div className="border-stroke dark:border-dark-3 xsm:w-1/2 xsm:border-r">
           <p className="font-medium">Saldo Inicial</p>
-          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
-            $45,070.00
+          <h4 className="mt-1 md:text-md font-bold text-dark dark:text-white">
+            <CapitalDisplay initialCapital={saldoInicial} />
           </h4>
         </div>
         <div className="xsm:w-1/2">
           <p className="font-medium">Saldo actual</p>
-          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
-            $32,400.00
+          <h4 className="mt-1 md:text-md font-bold text-dark dark:text-white">
+            <CapitalDisplay initialCapital={data[data.length - 1].saldo_actual} />
           </h4>
         </div>
       </div>
 
 
-    </>
+    </div>
   );
 };
 
