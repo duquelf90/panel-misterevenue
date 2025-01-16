@@ -1,8 +1,8 @@
+'use client'
+
 import { Avatar, Card, CardBody } from '@nextui-org/react'
 import { generateTransactions } from 'config/utils';
 import React, { useState } from 'react';
-
-
 
 const MyTable = () => {
     const transactions = generateTransactions();
