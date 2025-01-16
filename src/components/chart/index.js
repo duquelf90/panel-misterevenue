@@ -1,16 +1,17 @@
+
+'use client'
 import React from 'react'
-import { Line } from "react-chartjs-2";
+import dynamic from "next/dynamic";
+const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
-import { Chart, registerables } from "chart.js";
-
-
-Chart.register(...registerables);
 
 const MyChart = () => {
   const monthNames = Array.from({ length: 12 }, (_, i) => {
     const date = new Date(2024, i);
     return date.toLocaleString('default', { month: 'long' });
   });
+
+
   const item = {
     labels: monthNames,
     datasets: [
@@ -25,11 +26,119 @@ const MyChart = () => {
     ],
   };
 
+  const series = [
+    {
+      name: "Received Amount",
+      data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
+    },
+
+  ];
+
+  const optionsA = {
+    legend: {
+      show: false,
+      position: "top",
+      horizontalAlign: "left",
+    },
+    colors: ["#5750F1", "#0ABEF9"],
+    chart: {
+      fontFamily: "Satoshi, sans-serif",
+      height: 310,
+      type: "area",
+      toolbar: {
+        show: false,
+      },
+    },
+    fill: {
+      gradient: {
+        opacityFrom: 0.55,
+        opacityTo: 0,
+      },
+    },
+    responsive: [
+      {
+        breakpoint: 1024,
+        options: {
+          chart: {
+            height: 300,
+          },
+        },
+      },
+      {
+        breakpoint: 1366,
+        options: {
+          chart: {
+            height: 320,
+          },
+        },
+      },
+    ],
+    stroke: {
+      curve: "smooth",
+    },
+    markers: {
+      size: 0,
+    },
+    grid: {
+      strokeDashArray: 5,
+      xaxis: {
+        lines: {
+          show: false,
+        },
+      },
+      yaxis: {
+        lines: {
+          show: true,
+        },
+      },
+    },
+    dataLabels: {
+      enabled: false,
+    },
+    tooltip: {
+      fixed: {
+        enabled: false,
+      },
+      x: {
+        show: false,
+      },
+      y: {
+        title: {
+          formatter: function (e) {
+            return "";
+          },
+        },
+      },
+      marker: {
+        show: false,
+      },
+    },
+    xaxis: {
+      type: "category",
+      categories: monthNames,
+      axisBorder: {
+        show: false,
+      },
+      axisTicks: {
+        show: false,
+      },
+    },
+    yaxis: {
+      title: {
+        style: {
+          fontSize: "0px",
+        },
+      },
+    },
+  };
+
   const options = {
     responsive: true,
     plugins: {
       legend: {
-        position: "bottom", // Mueve la leyenda a la parte inferior
+        show: false,
+        position: "top",
+        horizontalAlign: "left",
       },
     },
     scales: {
@@ -41,8 +150,14 @@ const MyChart = () => {
 
   return (
     <>
-      <h2 className="text-xl font-semibold py-4">Rendimiento</h2>
-      <Line data={item} options={options} />
+      <h4 className="my-2 ml-4 text-body-2xlg font-semibold text-dark ">
+        Rendimiento
+      </h4>
+      <div className="ml-1 mr-1">
+        <ApexChart type="area" options={optionsA} series={series} height={100} />
+      </div>
+
+
     </>
   );
 };

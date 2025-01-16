@@ -1,6 +1,7 @@
 import FeatureCard from 'components/card';
 import MyTable from 'components/table';
 import MyChart from 'components/chart';
+import { Card } from '@nextui-org/react';
 
 const Dashboard = () => {
   return (
@@ -24,8 +25,8 @@ const Dashboard = () => {
               title={"Ingreso Mensual"}
             />
           </div>
-          <div className='items-center justify-center md:w-1/2'><MyChart /></div>
-          
+          <Card className='md:w-1/2 rounded-[10px] px-7.5 pb-6 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-7'><MyChart /></Card>
+
         </div>
         <MyTable />
       </div>

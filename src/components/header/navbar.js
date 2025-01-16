@@ -9,7 +9,7 @@ import React from 'react'
 const navMenuItems = [
     {
         label: "Dashboard",
-        href: "/dashboard",
+        href: "/",
     },
     {
         label: "Perfil",
