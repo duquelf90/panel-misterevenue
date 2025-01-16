@@ -11,7 +11,7 @@ function getLastTwelveMonths() {
   return months;
 }
 
-function generateSaldoData(inicial, porcentajeAumento) {
+export const generateSaldoData = (inicial, porcentajeAumento) => {
   const months = getLastTwelveMonths();
 
   const data = [];
@@ -31,5 +31,19 @@ function generateSaldoData(inicial, porcentajeAumento) {
   return { data };
 }
 
-export { generateSaldoData };
+export const generateTransactions = () => {
+  const transactions = [];
+  const now = new Date();
+
+  for (let i = 0; i < 12; i++) {
+    const date = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    transactions.push({
+      name: "MisterRevenue",
+      date: date.toLocaleDateString(),
+      amount: Math.round(Math.random() * 10000) * (Math.random() > 0.5 ? 1 : 1), // Monto aleatorio
+    });
+  }
+
+  return transactions;
+};
 

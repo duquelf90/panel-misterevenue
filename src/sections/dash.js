@@ -11,7 +11,7 @@ const Dashboard = () => {
           <span className='my-2 text-lg lg:text-xl text-default-600 block max-w-full'>Hola, Marcos A. Daniel&nbsp;</span>
         </div>
         <div className='flex flex-col sm:flex-row md:justify-between gap-3'>
-          <div className="flex flex-col sm:flex-col gap-5 items-center justify-center md:w-1/2">
+          <div className="flex flex-col sm:flex-col items-center md:w-1/2 gap-3">
             <FeatureCard
               balance={1200000}
               roi={36}
@@ -25,10 +25,10 @@ const Dashboard = () => {
               title={"Ingreso Mensual"}
             />
           </div>
-          <Card className='md:w-1/2 rounded-[10px] px-7.5 pb-6 pt-7.5 shadow-1 dark:bg-gray-dark dark:shadow-card xl:col-span-7'><MyChart /></Card>
-
+          <MyChart />
         </div>
         <MyTable />
+
       </div>
     </section>
   )
