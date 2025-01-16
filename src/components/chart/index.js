@@ -2,39 +2,34 @@
 'use client'
 import React from 'react'
 import dynamic from "next/dynamic";
+import { generateSaldoData } from 'config/utils';
 const ApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 
 const MyChart = () => {
-  const monthNames = Array.from({ length: 12 }, (_, i) => {
-    const date = new Date(2024, i);
-    return date.toLocaleString('default', { month: 'long' });
-  });
 
+  const saldoInicial = 1000000; // Ejemplo de saldo inicial
+  const porcentajeAumento = 36; // Ejemplo de porcentaje de aumento
 
-  const item = {
-    labels: monthNames,
-    datasets: [
-      {
-        label: new Date().getFullYear(),
-        data: [30000, 40000, 80, 81, 56, 90000, 70000, 80000, 95000, 100000, 110000, 120000],
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "#3182ce",
-        borderWidth: 1,
-        fill: true,
-      },
-    ],
-  };
+  const { data } = generateSaldoData(saldoInicial, porcentajeAumento);
+  const categories = data.map(item => item.fecha);
+  const inicial = data.map(item => item.saldo_inicial);
+  const saldoActual = data.map(item => item.saldo_actual);
 
   const series = [
     {
-      name: "Received Amount",
-      data: [0, 20, 35, 45, 35, 55, 65, 50, 65, 75, 60, 75],
+      name: "Saldo Inicial",
+      data: inicial,
     },
+    {
+      name: "Saldo Actual",
+      data: saldoActual
+    }
 
   ];
 
   const options = {
+
     legend: {
       show: false,
       position: "top",
@@ -118,7 +113,7 @@ const MyChart = () => {
     },
     xaxis: {
       type: "category",
-      categories: monthNames,
+      categories: categories,
       axisBorder: {
         show: false,
       },
@@ -135,7 +130,7 @@ const MyChart = () => {
     },
   };
 
-  
+
 
   return (
     <>
@@ -144,6 +139,21 @@ const MyChart = () => {
       </h4>
       <div className="ml-1 mr-1">
         <ApexChart type="area" options={options} series={series} height={100} />
+      </div>
+
+      <div className="flex flex-row gap-2 text-center xsm:flex-row xsm:gap-0 justify-center items-center">
+        <div className="border-stroke dark:border-dark-3 xsm:w-1/2 xsm:border-r">
+          <p className="font-medium">Saldo Inicial</p>
+          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
+            $45,070.00
+          </h4>
+        </div>
+        <div className="xsm:w-1/2">
+          <p className="font-medium">Saldo actual</p>
+          <h4 className="mt-1 text-xl font-bold text-dark dark:text-white">
+            $32,400.00
+          </h4>
+        </div>
       </div>
 
 
