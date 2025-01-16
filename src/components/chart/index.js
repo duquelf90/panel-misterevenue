@@ -34,7 +34,7 @@ const MyChart = () => {
 
   ];
 
-  const optionsA = {
+  const options = {
     legend: {
       show: false,
       position: "top",
@@ -47,6 +47,9 @@ const MyChart = () => {
       type: "area",
       toolbar: {
         show: false,
+      },
+      zoom: {
+        enabled: false, // Deshabilitar el zoom
       },
     },
     fill: {
@@ -132,21 +135,7 @@ const MyChart = () => {
     },
   };
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        show: false,
-        position: "top",
-        horizontalAlign: "left",
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
+  
 
   return (
     <>
@@ -154,7 +143,7 @@ const MyChart = () => {
         Rendimiento
       </h4>
       <div className="ml-1 mr-1">
-        <ApexChart type="area" options={optionsA} series={series} height={100} />
+        <ApexChart type="area" options={options} series={series} height={100} />
       </div>
 
 
