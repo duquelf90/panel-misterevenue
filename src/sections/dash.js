@@ -1,6 +1,5 @@
 import MyTable from 'components/table';
 import MyChart from 'components/chart';
-import { Card } from '@nextui-org/react';
 import { FeatureCard } from 'components/card';
 
 const Dashboard = () => {
