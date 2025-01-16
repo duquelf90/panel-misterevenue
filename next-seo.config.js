@@ -2,11 +2,11 @@ export const SEOpt = {
   title: "Crecimiento Financiero",
   titleTemplate: "Mister Revenue | %s",
   description: "Gestión de Patrimonios de Inversión",
-  canonical: "https://www.misterevenue.io",
+  canonical: "https://dash.misterevenue.io",
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: "https://www.misterevenue.io",
+    url: "https://dash.misterevenue.io",
     siteName: "MisterRevenue",
   },
   twitter: {
