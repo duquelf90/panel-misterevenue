@@ -71,7 +71,7 @@ const MyChart = () => {
         breakpoint: 2000,
         options: {
           chart: {
-            height: 320,
+            height: 300,
           },
         },
       },
