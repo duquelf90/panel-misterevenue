@@ -1,6 +1,6 @@
 {
-  "name": "panel",
-  "short_name": "",
+  "name": "Panel Financiero",
+  "short_name": "dashboard",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
