@@ -41,7 +41,6 @@ const MyChart = () => {
     chart: {
       fontFamily: "Satoshi, sans-serif",
       height: 310,
-      type: "area",
       toolbar: {
         show: false,
       },
@@ -140,7 +139,7 @@ const MyChart = () => {
         <h4 className="my-2 ml-4 font-semibold text-dark dark:text-white">
           Rendimiento
         </h4>
-        <ApexChart type="area" options={options} series={series} height={100} />
+        <ApexChart type="bar" options={options} series={series} height={100} />
 
         <div className="flex flex-row gap-1 text-center xsm:flex-row xsm:gap-0 justify-center items-center">
           <div className="border-stroke dark:border-dark-3 xsm:w-1/2 xsm:border-r">
