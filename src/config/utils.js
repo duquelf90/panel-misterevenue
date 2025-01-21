@@ -31,6 +31,10 @@ export const generateSaldoData = (inicial, porcentajeAumento) => {
   return { data };
 }
 
+export const dataTransaction = [
+
+];
+
 export const generateTransactions = () => {
   const transactions = [];
   const now = new Date();
@@ -41,7 +45,7 @@ export const generateTransactions = () => {
     transactions.push({
       name: "MisterRevenue",
       date: date.toLocaleDateString(),
-      amount: 30000, // Monto aleatorio
+      amount: 90000, // Monto aleatorio
     });
   }
 
